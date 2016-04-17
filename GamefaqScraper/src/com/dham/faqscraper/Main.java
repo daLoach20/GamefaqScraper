@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 	
 	/*
-	 * Author: David Hamilton 4/16/2016.
+	 * 
 	 * 
 	 * We want to build our skills a bit.
 	 * To that end, we are going to make a scraper for GameFaqs guides.
