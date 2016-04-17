@@ -12,8 +12,6 @@ import org.jsoup.select.Elements;
  * This class takes in a URL as a String and
  * scrapes the page for the guide text. The text
  * is then put into variable guideText.
- * 
- * 
  */
 
 public class Page {
