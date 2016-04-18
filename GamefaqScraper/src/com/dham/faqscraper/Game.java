@@ -37,6 +37,7 @@ public class Game {
 			urlList = doc.select("a[href]");
 			
 			System.out.print("Gathering Pages...");
+			//System.out.println(urlList.size());
 			for(Element e : urlList){
 				/*
 				System.out.print("href: " + e.attr("href"));
@@ -54,6 +55,8 @@ public class Game {
 				}
 				
 			}
+			
+			//System.out.println(pages.size() + " " + count);
 			
 			/*
 			int i = 0, j = 0;

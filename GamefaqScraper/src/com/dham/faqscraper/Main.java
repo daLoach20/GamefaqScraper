@@ -31,12 +31,12 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		//String url = "http://www.gamefaqs.com/ps2/197344-final-fantasy-x/faqs/18187";
+		String url = "http://www.gamefaqs.com/ps2/197344-final-fantasy-x/faqs/18187";
 		
+		//THIS ONE DOOOFUS!
+		//String url = "http://www.gamefaqs.com/ps2/197344-final-fantasy-x/faqs";
 		
-		String url = "http://www.gamefaqs.com/ps2/197344-final-fantasy-x/faqs";
-		
-		
+		/*
 		System.out.print("0: Game Mode.\n1: Console Mode (Broken)\n>");
 		int mode = getMode();
 		
@@ -56,12 +56,14 @@ public class Main {
 			System.out.println("Done Saving!");
 		}
 		else System.out.println("Invalid selection.");
+		*/
 		
 		
-		/*
+		for(int i = 0; i < 20; i++){
 		Page p = new Page(url);
 		p.saveFile();
-		*/
+		}
+		
 
 	}
 

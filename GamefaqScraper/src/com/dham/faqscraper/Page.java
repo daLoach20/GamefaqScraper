@@ -45,6 +45,8 @@ public class Page {
 			gameTitle = eGameTitle.text();
 			
 			//System.out.println(guideText);
+			//System.out.println(title);
+			//System.out.println(guideText.length());
 			
 			
 		}
@@ -72,7 +74,7 @@ public class Page {
 		
 		if(guideText != null){
 			output = getTitle();
-			StringToFile saver = new StringToFile(output, guideText);
+			StringToFile saver = new StringToFile(output, guideText, gameTitle);
 			saver.saveFile();
 		}
 		
