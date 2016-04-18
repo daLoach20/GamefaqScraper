@@ -12,6 +12,28 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/*
+ * Author: David Hamilton 4/16/2016.
+ * 
+ * We want to build our skills a bit.
+ * To that end, we are going to make a scraper for GameFaqs guides.
+ * 
+ * Elements will be:
+ * 
+ * Page Element to parse the guide to Txt.
+ * Game Element to open each Page
+ * 
+ * Console Element to open each Game.
+ * We'll probably need a way to traverse the multiple pages
+ * that will have the games listed in Alphabetical Order.
+ * 
+ * We want to at least try to use good OOP concepts.
+ * 
+ * TODO: CONSOLE, CLEAN UP GUI
+ * 
+ * 
+ */
+
 public class ScraperGui extends Application{
 	
 	private int mode = -1;
