@@ -1,7 +1,6 @@
 package com.dham.faqscraper;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -36,13 +35,19 @@ import javafx.stage.Stage;
 
 public class ScraperGui extends Application{
 	
-	private int mode = -1;
-	private String url;
+	public Button gameModeBtn;
+	public Button consoleModeBtn;
+	public Button sendBtn;
+	
+	private TextField urlTxtField;
+	
 	
 	// http://www.gamefaqs.com/ps2/197344-final-fantasy-x/faqs
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
+		 urlTxtField = new TextField();
 		
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
@@ -57,11 +62,11 @@ public class ScraperGui extends Application{
 		String sendString = "Send";
 		
 		//Button
-		Button gameModeBtn = new Button(gameModeString);
+		gameModeBtn = new Button(gameModeString);
 		grid.add(gameModeBtn, 0, 0);
 		
 		//Button
-		Button consoleModeBtn = new Button(consoleModeString);
+		consoleModeBtn = new Button(consoleModeString);
 		grid.add(consoleModeBtn, 1, 0);
 		
 		//Label
@@ -69,48 +74,14 @@ public class ScraperGui extends Application{
 		grid.add(urlLbl, 0, 2);
 		
 		//TextField
-		final TextField urlTxtField = new TextField();
 		grid.add(urlTxtField, 1, 2);
 		
 		//Button
-		Button sendBtn = new Button(sendString);
+		sendBtn = new Button(sendString);
 		HBox hbBtn = new HBox(10);
 		hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
 		hbBtn.getChildren().add(sendBtn);
 		grid.add(hbBtn, 1, 3);
-		
-		gameModeBtn.setOnAction(new EventHandler<ActionEvent>() {
-
-			public void handle(ActionEvent arg0) {
-				mode = 0;
-			}
-			
-		});
-		
-		consoleModeBtn.setOnAction(new EventHandler<ActionEvent>(){
-
-			public void handle(ActionEvent arg0) {
-				mode = 1;
-			}
-			
-		});
-		
-		sendBtn.setOnAction(new EventHandler<ActionEvent>(){
-
-			public void handle(ActionEvent arg0) {
-				
-				boolean modeBool = mode == 0 || mode == 1;
-				
-				if(modeBool && urlTxtField.getText().toLowerCase().contains("http")){
-					url = urlTxtField.getText();
-					getPages(url, mode);
-				}
-				else{
-					//Display Error
-				}
-			}
-			
-		});
 		
 		//grid.setGridLinesVisible(true);
 		
@@ -120,27 +91,13 @@ public class ScraperGui extends Application{
 		primaryStage.show();
 	}
 	
-	public static void main(String[] args){
-		launch(args);
+	public String getURLText(){
+		
+		return urlTxtField.getText();
 	}
 	
-	private static void getPages(String url, int mode){
-		
-		if(mode == 1){
-			System.out.println("This feature not yet implemented.");
-		}
-		else if(mode == 0){
-			
-			Game g = new Game(url);
-			
-			System.out.println("Done Getting!");
-			
-			g.saveFiles();
-			
-			System.out.println("Done Saving!");
-		}
-		else System.out.println("Invalid selection.");
-		
+	public void setURLText(String newText){
+		urlTxtField.setText(newText);
 	}
 
 }
