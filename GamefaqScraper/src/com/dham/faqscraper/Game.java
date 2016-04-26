@@ -60,7 +60,7 @@ public class Game {
 			
 			/*
 			int i = 0, j = 0;
-			while(j < 20){
+			while(j < 30){
 				if(urlList.get(i).attr("href").contains("/faqs/")){
 					pages.add(new Page(urlList.get(i).absUrl("href")));
 					j++;

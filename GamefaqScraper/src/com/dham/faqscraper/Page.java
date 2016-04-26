@@ -74,12 +74,22 @@ public class Page {
 		
 		if(guideText != null){
 			output = getTitle();
+			gameTitle = formatGame(gameTitle);
 			StringToFile saver = new StringToFile(output, guideText, gameTitle);
 			saver.saveFile();
 		}
 		
 	}
 	
+	private String formatGame(String gameTitle) {
+		
+		String tmp = gameTitle.replace('/', '.');
+		//System.out.println(tmp);
+		
+		
+		return tmp;
+	}
+
 	public String getTitle(){
 		/*
 		 * This function gets the title of
